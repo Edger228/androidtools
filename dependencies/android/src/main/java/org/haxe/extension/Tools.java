@@ -82,6 +82,11 @@ public class Tools extends Extension {
 		return granted.toArray(new String[granted.size()]);
 	}
 
+	public static String getExternalStorageDirectory()
+	{
+		return Environment.getExternalStorageDirectory().getAbsolutePath();
+	}
+
 	public static void requestPermissions(final String[] permissions, final int requestCode) {
 		try {
 			Extension.mainActivity.requestPermissions(permissions, requestCode);
