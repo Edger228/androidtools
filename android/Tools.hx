@@ -20,6 +20,12 @@ class Tools
 		launchPackage_jni(packageName, requestCode);
 	}
 
+	public static function getExternalStorageDirectory():String
+	{
+		var getExternalStorageDirectory_jni = JNI.createStaticMethod("org/haxe/extension/Tools", "getExternalStorageDirectory", "()Ljava/lang/String;");
+		return getExternalStorageDirectory_jni();
+	}
+
 	/**
 	 * Returns `true` If the device have root.
 	 * Returns `false` If the device doesn't have root or there`s a error while the process is runned.
