@@ -90,4 +90,9 @@ class Environment
 		var isExternalStorageRemovable_jni:Dynamic = JNI.createStaticMethod('android/os/Environment', 'isExternalStorageRemovable', '()Z');
 		return isExternalStorageRemovable_jni();
 	}
+
+	private static inline function getAbsolutePath(file:Dynamic):String
+	{
+		return JNI.callMember(JNICache.createMemberMethod('java/io/File', 'getAbsolutePath', '()Ljava/lang/String;'), file, []);
+	}
 }
