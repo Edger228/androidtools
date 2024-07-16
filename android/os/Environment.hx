@@ -5,6 +5,7 @@ package android.os;
 #end
 
 import lime.system.JNI;
+import android.jni.JNICache;
 
 /**
  * @see https://developer.android.com/reference/android/os/Environment
