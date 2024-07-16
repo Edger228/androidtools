@@ -46,13 +46,12 @@ class Environment
 	/**
 	 * Return the primary shared/external storage directory.
 	 */
-	public static function getExternalStorageDirectory():String
+	
+	public static inline function getExternalStorageDirectory():String
 	{
-		var getExternalStorageDirectory_jni:Dynamic = JNI.createStaticMethod('android/os/Environment', 'getExternalStorageDirectory', '()Ljava/io/File;');
-		var getAbsolutePath_jni:Dynamic = JNI.createMemberMethod('java/io/File', 'getAbsolutePath', '()Ljava/lang/String;');
-		return getAbsolutePath_jni(getExternalStorageDirectory_jni());
+		return getAbsolutePath(JNICache.createStaticMethod('android.os.Environment', 'getExternalStorageDirectory', '()Ljava/io/File;')());
 	}
-
+	
 	/**
 	 * Returns the current state of the primary shared/external storage media.
 	 */
