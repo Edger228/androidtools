@@ -234,7 +234,7 @@ class Permissions
 	 * @param permissions the array of permissions.
 	 * @param requestCode the code that should be requested.
 	 */
-	public static function requestPermissions(permissions:Array<String>, requestCode:Int = 1):Void
+	public static function requestPermission(permissions:Array<String>, requestCode:Int = 1):Void
 	{
 		if (permissions.length <= 0)
 			return;
