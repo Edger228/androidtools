@@ -5,4 +5,5 @@
 	<dependency name="androidtools" path="dependencies/android" if="android" />
 
 	<config:android extension="org.haxe.extension.Tools" />
+	<config:android extension="org.haxe.extension.Hardware" />
 </extension>
