@@ -3,5 +3,6 @@
 	<uses-permission android:name="android.permission.VIBRATE" />
 	<uses-permission android:name="android.permission.WAKE_LOCK" />
 	<uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 	<application android:debuggable="::DEBUG::" android:hardwareAccelerated="true" />
 </manifest>
