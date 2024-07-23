@@ -4,6 +4,10 @@ repositories {
 	google()
 }
 
+defaultConfig {
+	minSdkVersion 18
+}
+
 android {
 	compileSdkVersion Integer.parseInt(project.ANDROID_BUILD_SDK_VERSION)
 	buildToolsVersion project.ANDROID_BUILD_TOOLS_VERSION
