@@ -30,3 +30,6 @@ Credits
 - [M.A. Jigsaw](https://github.com/MAJigsaw77) - Creator of this extension.
 - [Lucky dog 7](https://github.com/luckydog7) - Functions from his old extension.
 - The contributors.
+- [MasterX-39]
+- (https://github.com/MasterX-39) -
+- Forked from her old extension.
