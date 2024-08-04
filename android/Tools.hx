@@ -128,6 +128,7 @@ private typedef ButtonData =
 	// The callback function to execute when the button is clicked.
 }
 
+/**
  * Listener class for handling button click events in an alert dialog.
  */
 @:noCompletion
