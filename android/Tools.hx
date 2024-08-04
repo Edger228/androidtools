@@ -69,6 +69,27 @@ class Tools
 	}
 
 	/**
+	 * Shows an alert dialog with optional positive and negative buttons.
+	 *
+	 * @param title The title of the alert dialog.
+	 * @param message The message content of the alert dialog.
+	 * @param positiveButton Optional data for the positive button.
+	 * @param negativeButton Optional data for the negative button.
+	 */
+	public static function showAlertDialog(title:String, message:String, ?positiveButton:ButtonData, ?negativeButton:ButtonData):Void
+	{
+		if (positiveButton == null)
+			positiveButton = {name: null, func: null};
+
+		if (negativeButton == null)
+			negativeButton = {name: null, func: null};
+
+		JNICache.createStaticMethod('org/haxe/extension/Tools', 'showAlertDialog',
+			'(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lorg/haxe/lime/HaxeObject;Ljava/lang/String;Lorg/haxe/lime/HaxeObject;)V')(title, message,
+				positiveButton.name, new ButtonListener(positiveButton.func), negativeButton.name, new ButtonListener(negativeButton.func));
+	}
+
+	/**
 	 * Return the brightness of the main window.
 	 */
 	public static function getBrightness():Float
