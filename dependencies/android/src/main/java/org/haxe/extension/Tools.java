@@ -1,12 +1,20 @@
 package org.haxe.extension;
 
+import android.app.AlertDialog;
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.app.UiModeManager;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
+import android.media.MediaCodecList;
+import android.media.MediaFormat;
 import android.net.Uri;
+import android.os.BatteryManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Vibrator;
@@ -14,6 +22,9 @@ import android.util.ArrayMap;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.net.Uri;
 
