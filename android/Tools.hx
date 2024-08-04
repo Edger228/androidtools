@@ -115,3 +115,43 @@ class Tools
 			Log.warn("VIBRATE permission isn't granted, we can't vibrate the device.");
 	}
 }
+
+/**
+ * Data structure for defining button properties in an alert dialog.
+ */
+@:noCompletion
+private typedef ButtonData =
+{
+	name:String,
+	// The name or label of the button.
+	func:Void->Void
+	// The callback function to execute when the button is clicked.
+}
+
+ * Listener class for handling button click events in an alert dialog.
+ */
+@:noCompletion
+private class ButtonListener #if (lime >= "8.0.0") implements JNISafety #end
+{
+	private var onClickEvent:Event<Void->Void> = new Event<Void->Void>();
+
+	/**
+	 * Creates a new button listener with a specified callback function.
+	 *
+	 * @param clickCallback The function to execute when the button is clicked.
+	 */
+	public function new(clickCallback:Void->Void):Void
+	{
+		if (clickCallback != null)
+			onClickEvent.add(clickCallback);
+	}
+
+	#if (lime >= "8.0.0")
+	@:runOnMainThread
+	#end
+	public function onClick():Void
+	{
+		onClickEvent.dispatch();
+	}
+}
+
