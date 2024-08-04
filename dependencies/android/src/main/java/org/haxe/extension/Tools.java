@@ -14,7 +14,6 @@ import android.content.res.Configuration;
 import android.media.MediaCodecList;
 import android.media.MediaFormat;
 import android.net.Uri;
-import android.os.BatteryManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Vibrator;
